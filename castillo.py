@@ -31,7 +31,7 @@ Rect(120, 195, 130, 125, relleno='azulAlica', borde="grisOscuro", anchuraDeBorde
 
 #TORRE-IZQUIERDA
 Rect(33, 130, 90, 190, relleno='azulAlica', borde="grisOscuro", anchuraDeBorde=3)
-Rect(40, 70, 76, 50, relleno='azulAlica', borde="grisOscuro")
+Rect(40, 70, 76, 50, relleno='a}zulAlica', borde="grisOscuro")
 Circulo(130, 127, 10, relleno='grisOscuro')
 Circulo(27, 127, 10, relleno='grisOscuro')
 Rect(30, 55, 100, 16, relleno='grisOscuro')
