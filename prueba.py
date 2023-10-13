@@ -1,6 +1,5 @@
-from cmu_graphics import *
+ingles = []
+mates = []
+general = []
 
-print("algo")
-print("Hola")
-print("soy tatiana")
-print("samir")
+listaDePreguntas  = [ingles, mates]
