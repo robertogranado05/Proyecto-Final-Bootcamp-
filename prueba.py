@@ -2,4 +2,4 @@ ingles = []
 mates = []
 general = []
 
-listaDePreguntas  = [ingles, mates]
+listaDePreguntas  = [ingles, mates, general]
