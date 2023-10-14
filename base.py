@@ -1,9 +1,9 @@
 from cmu_graphics import *
 from cmu_graphics import cmu_graphics
 import random
-import BatallaElecciones as pantallaElección
+# import BatallaElecciones as pantallaElección
 
-pantallaElección.alFondo()
+# pantallaElección.alFondo()
 rotuloPregunta = Label('', 90, 320, tamaño=20, negrito=True)
 
 ### Listas de preguntas ###
@@ -53,12 +53,13 @@ def obtenerPregunta(lista):
         pregunta = general[fila][0]     
         respuesta = general[fila][1]
     
+    preguntasUsadas.append(pregunta)
     rotuloPregunta.valor = pregunta
-    # print(pregunta)
+    print(pregunta)
     return respuesta
 
-vidaDragon = 99
-vidaJugador = 99
+vidaDragon = 100
+vidaJugador = 100
 
 def comprobarVictoria(rJugador, r):
     global vidaJugador, vidaDragon
