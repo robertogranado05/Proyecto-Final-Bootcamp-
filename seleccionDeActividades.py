@@ -1,13 +1,29 @@
-Rect(0,0,400,400,relleno=gradiente('nebulosaRosa','varillaDoradaPalida',inicio='superior'),borde='marrónCuero',anchuraDeBorde=5)
-Rect(21,240,120,40,relleno='gainsBoro',borde='marrónCuero')
-Rect(170,240,60,40,relleno='gainsBoro',borde='marrónCuero')
-Rect(260,240,110,40,relleno='gainsBoro',borde='marrónCuero')
+from cmu_graphics import *
+from cmu_graphics import cmu_graphics
 
+Rect(0,0,400,400,relleno=gradiente('nebulosaRosa','varillaDoradaPalida',inicio='superior'),borde='marrónCuero',anchuraDeBorde=5)
+
+botonGeneral = Group(
+    Rect(21,240,120,40,relleno='gainsBoro',borde='marrónCuero'),
+    Rotulo('Cultura general',80,260,tamaño=14)
+)
+botonGeneral.nombre = 'Cultura general'
+
+botonIngles = Group(
+    Rect(170,240,60,40,relleno='gainsBoro',borde='marrónCuero'),
+    Rotulo('Ingles',200,260,tamaño=14)
+)
+botonIngles.nombre = 'Ingles'
+
+botonMates = Group(
+    Rect(260,240,110,40,relleno='gainsBoro',borde='marrónCuero'),
+    Rotulo('Matematicas',315,260,tamaño=14)
+)
+botonMates.nombre = 'Matematicas'
+
+botones = Group(botonGeneral, botonIngles, botonMates)
 
 Rotulo('¿Que actividad prefieres para combatir?',200,200,tamaño=18)
-Rotulo('Cultura general',80,260,tamaño=14)
-Rotulo('Ingles',200,260,tamaño=14)
-Rotulo('Matematicas',315,260,tamaño=14)
 Rotulo('¡Suerte en tú combate!',200,310,tamaño=16)
 Rotulo('Haz click en una de las opciones para iniciar',200,310,tamaño=16)
 #estrella
@@ -36,3 +52,5 @@ Linea(300,120,300,160,relleno='amarillo',anchuraDeLinea=5)
 
 Poligono(215,50,245,50,230,20,relleno='rosadoFuerte')
 Circulo(50,150,18,relleno=gradiente('limaVerde','azulReal','verde',inicio='superior'))
+
+#cmu_graphics.run()

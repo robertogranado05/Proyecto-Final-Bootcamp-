@@ -1,9 +1,10 @@
 from cmu_graphics import *
 from cmu_graphics import cmu_graphics
 import random
-# import BatallaElecciones as pantallaElección
+import seleccionDeActividades as select
+from seleccionDeActividades import botones
+import BatallaElecciones as pantallaElección
 
-# pantallaElección.alFondo()
 rotuloPregunta = Label('', 90, 320, tamaño=20, negrito=True)
 
 ### Listas de preguntas ###
@@ -31,35 +32,80 @@ general = [['¿Cuantos huesos tiene el cuerpo humano?', '206'],
             ['¿Cual es la capital de Colombia?', 'Bogotá']
             ]
 
+opcionesIngles = [['Hosing', 'House', 'Tree'], 
+                  ['Audi', 'Wheel', 'Car'],
+                  ['Mom', 'Mami', 'Nana'],
+                  ['Apple', 'Mango', 'Apol'],
+                  ['Habitation', 'Room', 'Living'],
+                  ['Sweet', 'Sour', 'Sugar']]
+
+opcionesMates = [['9', '3', 'No tiene'],
+                 ['4', '2', '7'],
+                 ['16', '70', '8'],
+                 ['80', '60', '100'],
+                 ['24', '38', '12'],
+                 ['3', '180', '360'],
+                 ['6', '2', '8']]
+
+opcionesGeneral = [['365', '206', '50'],
+                   ['2004', '1845', '1945'],
+                   ['7 de agosto', '1 de Enero', '20 de julio'],
+                   ['1492', '1955', '2018'],
+                   ['China', 'Rusia', 'Colombia'],
+                   ['Ballena azul', 'Elefante', 'Hormiga'],
+                   ['Cali', 'Bogotá', 'Buenaventura']]
+
 pregunta = ''
 preguntasUsadas = list()
+opciones = list()
+respuesta = ''
+fila = 0
 
 # Toma un parametro con el nombre de la materia o conjunto de palabras
 def obtenerPregunta(lista):
-    global rotuloPregunta, pregunta
+    global rotuloPregunta, pregunta, opciones, respuesta, fila
     lista.lower()
     #Compara el parametro con las listas existentes
     if lista == 'ingles':
         #Obtiene un valor aleatorio de fila y toma una pregunta y su respuesta
         fila = random.randint(0, len(ingles) - 1)
+        opciones = opcionesIngles[fila]
         pregunta = ingles[fila][0]     
         respuesta = ingles[fila][1]
     elif lista == 'matematicas':
         fila = random.randint(0, len(mates) - 1)
+        opciones = opcionesMates[fila]
         pregunta = mates[fila][0]
         respuesta = mates[fila][1]
     elif lista == 'cultura general':
         fila = random.randint(0, len(general) - 1)
+        opciones = opcionesGeneral[fila]
         pregunta = general[fila][0]     
         respuesta = general[fila][1]
     
-    preguntasUsadas.append(pregunta)
     rotuloPregunta.valor = pregunta
-    print(pregunta)
+    if pregunta in preguntasUsadas:
+        pass
+    else:
+        print(pregunta)
+    preguntasUsadas.append(pregunta)
+
+    if lista == 'ingles':
+        ingles.remove(ingles[fila])
+    elif lista == 'matematicas':
+        mates[fila].remove(pregunta)
+    elif lista == 'cultura general':
+        general[fila].remove(pregunta)
+
     return respuesta
 
 vidaDragon = 100
 vidaJugador = 100
+
+def obtenerOpciones():
+    print('a)', opciones[0])
+    print('b)', opciones[1])
+    print('c)', opciones[2])
 
 def comprobarVictoria(rJugador, r):
     global vidaJugador, vidaDragon
@@ -70,15 +116,32 @@ def comprobarVictoria(rJugador, r):
         print("Incorrecto")
         vidaJugador = vidaJugador - 5
 
-while vidaDragon > 0 and vidaJugador > 0:
-    materia = input("¿Que materia desea escoger entre estas?\n Inglés\n Matemáticas\n Cultural General\n")
-    for i in range(7):
-        respuesta = obtenerPregunta(materia)
-        respuestaJugador = input()
-        comprobarVictoria(respuestaJugador, respuesta)
+opcion = ''
 
-        print(f"El jugador tiene: {vidaJugador} de vida")
-        print(f"El dragón tiene: {vidaDragon} de vida")
+def luchar(materia):
+    while vidaDragon > 0 and vidaJugador > 0:
+        for i in range(7):
+            respuesta = obtenerPregunta(materia)
+            obtenerOpciones()
+            respuestaJugador = opcion
+            comprobarVictoria(respuestaJugador, respuesta)
+
+            # print(f"El jugador tiene: {vidaJugador} de vida")
+            # print(f"El dragón tiene: {vidaDragon} de vida")
+
+def onMousePress(x, y):
+    for boton in botones:
+        if boton.toca(x, y):
+            luchar(boton.nombre)
+            pantallaElección.dibujarBatalla()
+
+def onKeyPress(key):
+    if key == 'a':
+        opcion = opciones[0]
+    elif key == 'b':
+        opcion = opciones[1]
+    elif key == 'c':
+        opcion = opciones[2]
 
 if vidaDragon == 0:
     print("Tú ganas")

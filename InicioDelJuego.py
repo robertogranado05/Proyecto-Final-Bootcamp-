@@ -7,6 +7,100 @@ Rect(0,320,400,320,relleno=gradiente('verde','verdeMilitar',inicio='inferior'))
 
 #CASTILLO
 
+DragonMalo = Grupo(
+    ##PATAS
+    Poligono(170, 320, 130, 370, 130, 395, 170, 390, 170, 375,
+    relleno=gradiente('carmesí', 'rojoOscuro')),
+    Poligono(190, 320, 230, 370, 230, 395, 190, 390, 190, 360,
+    relleno=gradiente('carmesí', 'rojoOscuro')),
+    Poligono(130, 370, 120, 340, 143, 355, relleno=gradiente('carmesí', 'rojoOscuro', 'grisPizarraOscuro', inicio="inferior")),
+    Poligono(230, 370, 240, 340, 217, 355, relleno=gradiente('carmesí', 'rojoOscuro', 'grisPizarraOscuro', inicio="inferior")),
+    
+    ##ALA IZQUIERDA
+    Poligono(150, 250, 135, 235, 125, 220, 115, 205, 105, 180, 
+    105, 80, 60, 125, 40, 160, 25, 205, 20, 230, 20, 255, 45,310,55, 245, 80, 310, 90, 255, 115, 325, 120,
+    260, 140, 315, borde='grisPizarraOscuro', anchuraDeBorde=5, relleno=gradiente('cian', 'azulMedianoche', 'azulAcero')),
+    ##Vena1
+    Linea(80, 310, 74, 250, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(74, 250, 65, 190, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(65, 160, 80, 130, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(65, 190, 65, 160, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(80, 130, 105, 80, relleno=gradiente("rojo", 'rojoOscuro')),
+    ##Vena2
+    Linea(45, 310, 35, 245, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(45, 187, 55, 157, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(69, 125, 105, 80, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(35, 245, 45, 187, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(55, 157, 69, 125, relleno=gradiente("rojo", 'rojoOscuro')),
+    ##Vena3
+    Linea(115, 325, 105, 250, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(91, 188, 90, 165, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(90, 135, 105, 80, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(105, 250, 91, 188, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(90, 165, 90, 135, relleno=gradiente("rojo", 'rojoOscuro')),
+    
+    ##ALA DERECHA
+    Poligono(210, 250, 225, 235, 235, 220, 245, 205, 255, 180, 255, 80, 300, 125, 320, 160, 335, 205, 340, 
+    230, 340, 255, 315, 310, 305, 245, 280, 310, 270, 255, 245, 325, 240, 260, 220, 315,
+    borde='grisPizarraOscuro', anchuraDeBorde=5, relleno=gradiente('cian', 'azulMedianoche', 'azulAcero')),
+    
+    ##Vena1
+    Linea(280, 310, 286, 250, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(286, 250, 295, 190, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(295, 160, 280, 130, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(295, 190, 295, 160, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(280, 130, 255, 80, relleno=gradiente("rojo", 'rojoOscuro')),
+    ##Vena2
+    Linea(315, 310, 325, 245, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(315, 187, 305, 157, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(291, 125, 255, 80, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(325, 245, 315, 187, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(305, 157, 291, 125, relleno=gradiente("rojo", 'rojoOscuro')),
+    ##Vena3
+    Linea(245, 325, 255, 250, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(269, 188, 270, 165, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(270, 135, 255, 80, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(255, 250, 269, 188, relleno=gradiente("rojo", 'rojoOscuro')),
+    Linea(270, 165, 270, 135, relleno=gradiente("rojo", 'rojoOscuro')),
+    
+    ##CUERPO
+    Óvalo(180, 297, 80, 160, relleno=gradiente('carmesí', 'rojoOscuro')),
+    Óvalo(180, 297, 65, 130, relleno=gradiente('rojo','carmesí', 'rojoOscuro')),
+    
+    ##Cuernos
+    Poligono(120, 160, 125, 85, 160, 120, relleno=gradiente('tomate', 'rojoOscuro', inicio="inferior")),
+    Poligono(240, 160, 240, 85, 200, 120, relleno=gradiente('tomate', 'rojoOscuro', inicio="inferior")),
+    Poligono(200, 120, 200, 100, 185, 120, relleno=gradiente('grisPizarraClaro', 'rojoOscuro', inicio="inferior")),
+    Poligono(160, 120, 165, 100, 175, 120, relleno=gradiente('grisPizarraClaro', 'rojoOscuro', inicio="inferior")),
+    Poligono(119, 200, 110, 170, 130, 180, relleno=gradiente('grisPizarraClaro', 'rojoOscuro', inicio="inferior")),
+    Poligono(240, 200, 250, 170, 225, 180, relleno=gradiente('grisPizarraClaro', 'rojoOscuro', inicio="inferior")),
+    
+    #CABEZA
+    Poligono(160, 240, 119, 200, 130, 180, 120, 160, 160, 120, 200, 120, 240, 160, 225, 180, 240, 200, 200, 240, 
+    relleno=gradiente('carmesí', 'rojoOscuro')),
+
+    ##BOCA
+    Óvalo(180, 200, 50, 20, relleno="rojoOscuro"),
+    Poligono(154, 200, 206, 200, 200, 214, 190, 222, 170, 222, 160, 215, relleno="rojoOscuro"),
+    Poligono(170, 222, 174, 205, 178, 222, relleno=gradiente("blanco", 'ladrillo', inicio="superior")),
+    Poligono(190, 222, 185, 205, 180, 222, relleno=gradiente("blanco", 'ladrillo', inicio="superior")),
+    Poligono(175, 190, 180, 210, 185, 190, relleno=gradiente("blanco", 'ladrillo', inicio="inferior")),
+    Poligono(195, 190, 190, 208, 184, 190, relleno=gradiente("blanco", 'ladrillo', inicio="inferior")),
+    Poligono(163, 190, 169, 210, 175, 190, relleno=gradiente("blanco", 'ladrillo', inicio="inferior")),
+    Poligono(190, 222, 196, 204, 200, 215, relleno=gradiente("blanco", 'ladrillo', inicio="superior")),
+    Poligono(169, 222, 163, 204, 160, 215, relleno=gradiente("blanco", 'ladrillo', inicio="superior")),
+    
+    ##OJOS
+    Poligono(150, 145, 170, 175, 145, 160, relleno=gradiente('azulGandul','rojoOscuro', 'negro')),
+    Poligono(210, 145, 190, 175, 215, 160, relleno=gradiente('azulGandul', 'rojoOscuro', 'negro')),
+    Poligono(216, 165, 190, 185, 220, 173, relleno=gradiente('azulGandul', 'rojoOscuro', 'negro')),
+    Poligono(144, 165, 170, 185, 140, 173, relleno=gradiente('azulGandul', 'rojoOscuro', 'negro')),
+    )
+DragonMalo.altura = 160
+DragonMalo.ancho = 160
+DragonMalo.centroX = 320
+DragonMalo.centroY = 70
+
 castillo=Grupo(
     Rect(0,160,50,170,relleno=gradiente('grisOscuro','grisTurbio',inicio='izquierda')),
     Rect(110,160,35,170,relleno=gradiente('grisOscuro','grisTurbio',inicio='izquierda')),
