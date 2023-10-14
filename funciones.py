@@ -1,5 +1,6 @@
 import random
 
+### Listas de preguntas ###
 ingles = [['Como se dice casa', 'House'], 
             ['como se dice carro', 'car'], 
             ['como se dice mamá', 'Mom']]
@@ -11,18 +12,18 @@ general = [['¿Cuantos huesos tiene el cuerpo humano?', '206'],
             ['¿En que fecha se celebra la independencia en Colombia?', '20 de Julio']
             ]
 
-listaElegida = list()
-
+# Toma un parametro con el nombre de la materia o conjunto de palabras
 def obtenerPregunta(lista):
-    # for lista in listaDePreguntas:
     lista.lower()
+    #Compara el parametro con las listas existentes
     if lista == 'ingles':
+        #Obtiene un valor aleatorio de fila y toma una pregunta y su respuesta
         fila = random.randint(0, 2)
         pregunta = ingles[fila][0]            
         respuesta = ingles[fila][1]
     elif lista == 'matematicas':
         fila = random.randint(0, 2)
-        pregunta = mates[fila][0]            
+        pregunta = mates[fila][0]
         respuesta = mates[fila][1]
     elif lista == 'cultura general':
         fila = random.randint(0, 2)
@@ -36,24 +37,23 @@ vidaDragon = 99
 vidaJugador = 99
 
 def comprobarVictoria(rJugador, r):
+    global vidaJugador, vidaDragon
     if rJugador.lower() == r.lower():
         print("¡Correcto!")
-        vidaDragon -= 11
+        vidaDragon = vidaDragon - 11
     else:
         print("Incorrecto")
-        vidaJugador -= 11
+        vidaJugador = vidaJugador - 11
 
 while vidaDragon > 0 and vidaJugador > 0:
     materia = input("¿Que materia desea escoger entre estas?\n Inglés\n Matemáticas\n Cultural General\n")
-    respuesta = obtenerPregunta(materia)
-    respuestaJugador = input()
+    for i in range(3):
+        respuesta = obtenerPregunta(materia)
+        respuestaJugador = input()
+        comprobarVictoria(respuestaJugador, respuesta)
 
-    comprobarVictoria(respuestaJugador, respuesta)
-
-    print("El jugador tiene: {vidaJugador} de vida".format())
-    print("El dragón tiene: {vidaDragon} de vida".format())
-    # print(r)
-    # print(rJugador)
+        print(f"El jugador tiene: {vidaJugador} de vida")
+        print(f"El dragón tiene: {vidaDragon} de vida")
 
 if vidaDragon == 0:
     print("Tú ganas")
