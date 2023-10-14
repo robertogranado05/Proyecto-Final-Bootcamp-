@@ -9,8 +9,9 @@ Rotulo('Cultura general',80,260,tamaño=14)
 Rotulo('Ingles',200,260,tamaño=14)
 Rotulo('Matematicas',315,260,tamaño=14)
 Rotulo('¡Suerte en tú combate!',200,310,tamaño=16)
-Poligono(165,330,165,390,260,360,relleno='gainsBoro',borde='marrónCuero')
-Rotulo('START',200,360,tamaño=20,fuente='monospace',negrito=Verdadero)
+Rotulo('Haz click en una de las opciones para iniciar',200,310,tamaño=16)
+#estrella
+Estrella(200,380,15,5,relleno='oro',borde='negro')
 #SIMBOLO RESTA
 Linea(345,25,375,45,relleno='azulVioleta',anchuraDeLinea=6)
 #SIMBOLO SUMA
