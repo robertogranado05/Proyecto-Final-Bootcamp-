@@ -11,8 +11,6 @@ general = [['¿Cuantos huesos tiene el cuerpo humano?', '206'],
             ['¿En que fecha se celebra la independencia en Colombia?', '20 de Julio']
             ]
 
-pregunta = ''
-respuesta = ''
 listaElegida = list()
 
 def obtenerPregunta(lista):
@@ -30,8 +28,34 @@ def obtenerPregunta(lista):
         fila = random.randint(0, 2)
         pregunta = general[fila][0]            
         respuesta = general[fila][1]
-
+    
     print(pregunta)
+    return respuesta
 
-materia = input("¿Que materia desea escoger entre estas?\n Inglés\n Matemáticas\n Cultural General\n")
-obtenerPregunta(materia)
+vidaDragon = 99
+vidaJugador = 99
+
+def comprobarVictoria(rJugador, r):
+    if rJugador.lower() == r.lower():
+        print("¡Correcto!")
+        vidaDragon -= 11
+    else:
+        print("Incorrecto")
+        vidaJugador -= 11
+
+while vidaDragon > 0 and vidaJugador > 0:
+    materia = input("¿Que materia desea escoger entre estas?\n Inglés\n Matemáticas\n Cultural General\n")
+    respuesta = obtenerPregunta(materia)
+    respuestaJugador = input()
+
+    comprobarVictoria(respuestaJugador, respuesta)
+
+    print("El jugador tiene: {vidaJugador} de vida".format())
+    print("El dragón tiene: {vidaDragon} de vida".format())
+    # print(r)
+    # print(rJugador)
+
+if vidaDragon == 0:
+    print("Tú ganas")
+elif vidaJugador == 0:
+    print("El dragón gana")
