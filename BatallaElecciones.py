@@ -127,12 +127,6 @@ DragonMalo.ancho = 160
 DragonMalo.centroX = 80
 DragonMalo.centroY = 190
 
-#PRINCESA
-Poligono(320, 280, 340, 240, 360, 280, relleno='violeta')
-Circulo(340, 230, 15, relleno='caqui')
-Linea(325, 213, 355, 213, anchuraDeLinea=20, guion=True, relleno='oro')
-Rect(325, 213, 30, 13, relleno='oro')
-
 #BARRAS DE VIDA
 BarraDelDragon = Rect(30, 85, 100, 16, relleno=gradiente('verdePrimavera', 'verdeAmarillento'))
 BarraDelPrincipe = Rect(205, 180, 90, 16, relleno=gradiente('verdePrimavera', 'verdeAmarillento'))
