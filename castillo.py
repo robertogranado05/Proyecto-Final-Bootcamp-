@@ -10,7 +10,7 @@ imagen.centroX = 100
 
 #CAMINO
 Rect(0, 320, 400, 320, relleno=gradiente('marVerde', 'marVerdeOscuro'))
-Poligono(80, Rect(0, 320, 400, 320, relleno="verde")
+Rect(0, 320, 400, 320, relleno="verde")
 
 #TORRE-DERECHA
 Rect(245, 130, 100, 190, relleno='azulAlica', borde="grisOscuro", anchuraDeBorde=3)
@@ -40,5 +40,5 @@ Circulo(129, 63, 8, relleno='grisOscuro')
 Rect(25, 117, 105, 20, relleno='grisOscuro')
 
 Poligono(33, 55, 77, 20, 125, 55, relleno='turquesa', borde="grisOscuro")
-320, 80, 340, 80, 358, 100, 375, 97, 400, 135, 400, 130, 357, 115, 320,
-relleno=gradiente('varillaDoradaClaraAmarilla', 'varillaDoradaPálida', inicio="inferior"))
+Polygon(320, 80, 340, 80, 358, 100, 375, 97, 400, 135, 400, 130, 357, 115, 320, relleno=gradiente('varillaDoradaClaraAmarilla', 'varillaDoradaPálida', inicio="inferior"))
+
