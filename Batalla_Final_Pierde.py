@@ -17,7 +17,7 @@ Círculo(30, 95, 3, relleno=rgb(15, 15, 15))
 Luna.altura = 100
 Luna.ancho = 100
 Luna.centroY = 60
-Luna.centroX = 200
+Luna.centroX = 60
 
 #Estrellas
 Estrella(320, 50, 2, 5, relleno='blanco')
@@ -136,10 +136,11 @@ Circulo(340, 230, 15, relleno='caqui')
 Linea(325, 213, 355, 213, anchuraDeLinea=20, guion=True, relleno='oro')
 Rect(325, 213, 30, 13, relleno='oro')
 
-Rotulo("!GAME OVER¡", 80, 128, relleno='violetaRojoMedio', tamaño=20)
-
 #PRINCIPE
 Linea(60, 305, 80, 330, relleno='rojo', anchuraDeLinea=20)
 Circulo(52, 295, 15, relleno='caqui')
+
+#GAME OVER
+Rotulo("¡¡GAME OVER!!", 275, 60, relleno=gradiente('rojoNaranja','rojo', 'rojoOscuro'), tamaño=30, fuente="monospace")
 
 cmu_graphics.run()
