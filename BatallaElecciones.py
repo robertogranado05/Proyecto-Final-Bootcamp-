@@ -27,10 +27,11 @@ Estrella(10, 25, 2, 5, relleno='blanco')
 
 #ELECCIONES
 Rect(0, 280, 400, 220, relleno='limónChifón', borde='plateado', anchuraDeBorde=5)
-Rotulo("Pregunta", 80, 305, relleno='grisPizarraOscuro', tamaño=20)
-Rotulo("a)", 207, 302, relleno='grisPizarraOscuro', tamaño=20)
-Rotulo("b)", 207, 330, relleno='grisPizarraOscuro', tamaño=20)
-Rotulo("c)", 207, 360, relleno='grisPizarraOscuro', tamaño=20)
+
+Pregunta = Rotulo("Pregunta", 80, 305, relleno='grisPizarraOscuro', tamaño=20)
+EleccionA = Rotulo("a)", 207, 302, relleno='grisPizarraOscuro', tamaño=20)
+EleccionB = Rotulo("b)", 207, 330, relleno='grisPizarraOscuro', tamaño=20)
+EleccionC = Rotulo("c)", 207, 360, relleno='grisPizarraOscuro', tamaño=20)
 
 DragonMalo = Grupo(
     ##PATAS
@@ -132,7 +133,7 @@ Circulo(340, 230, 15, relleno='caqui')
 Linea(325, 213, 355, 213, anchuraDeLinea=20, guion=True, relleno='oro')
 Rect(325, 213, 30, 13, relleno='oro')
 
-#BARRAs DE VIDA
+#BARRAS DE VIDA
 BarraDelDragon = Rect(30, 85, 100, 16, relleno=gradiente('verdePrimavera', 'verdeAmarillento'))
 BarraDelPrincipe = Rect(205, 180, 90, 16, relleno=gradiente('verdePrimavera', 'verdeAmarillento'))
 
@@ -143,5 +144,6 @@ Rect(240, 240, 20, 40, relleno='rojo')
 Circulo(250, 225, 15, relleno='caqui')
 Linea(235, 213, 261, 213, anchuraDeLinea=20, guion=True, relleno='oro')
 Rect(235, 213, 30, 13, relleno='oro')
+
 
 cmu_graphics.run()
