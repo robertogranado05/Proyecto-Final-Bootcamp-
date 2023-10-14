@@ -116,23 +116,32 @@ def comprobarVictoria(rJugador, r):
         print("Incorrecto")
         vidaJugador = vidaJugador - 5
 
+opcion = ''
+
 def luchar(materia):
     while vidaDragon > 0 and vidaJugador > 0:
         for i in range(7):
             respuesta = obtenerPregunta(materia)
             obtenerOpciones()
-            respuestaJugador = input()
+            respuestaJugador = opcion
             comprobarVictoria(respuestaJugador, respuesta)
 
-            print(f"El jugador tiene: {vidaJugador} de vida")
-            print(f"El dragón tiene: {vidaDragon} de vida")
+            # print(f"El jugador tiene: {vidaJugador} de vida")
+            # print(f"El dragón tiene: {vidaDragon} de vida")
 
 def onMousePress(x, y):
     for boton in botones:
         if boton.toca(x, y):
-            # luchar(boton.nombre)
+            luchar(boton.nombre)
             pantallaElección.dibujarBatalla()
 
+def onKeyPress(key):
+    if key == 'a':
+        opcion = opciones[0]
+    elif key == 'b':
+        opcion = opciones[1]
+    elif key == 'c':
+        opcion = opciones[2]
 
 if vidaDragon == 0:
     print("Tú ganas")
