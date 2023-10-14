@@ -129,6 +129,10 @@ Circulo(340, 230, 15, relleno='caqui')
 Linea(325, 213, 355, 213, anchuraDeLinea=20, guion=True, relleno='oro')
 Rect(325, 213, 30, 13, relleno='oro')
 
+#BARRAs DE VIDA
+BarraDelDragon = Rect(30, 85, 100, 16, relleno=gradiente('verdePrimavera', 'verdeAmarillento'))
+BarraDelPrincipe = Rect(205, 180, 90, 16, relleno=gradiente('verdePrimavera', 'verdeAmarillento'))
+
 #PRINCIPE
 Linea(235, 255, 210, 225, relleno='azulAceroClaro')
 Linea(223, 255, 232, 242, relleno='azulAceroClaro')
