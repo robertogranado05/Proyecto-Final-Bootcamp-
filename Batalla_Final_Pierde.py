@@ -1,3 +1,6 @@
+from cmu_graphics import *
+from cmu_graphics import cmu_graphics
+
 app.fondo = gradiente('índigo', 'azulPizarraOscuro', 'azulMedianoche', inicio='inferior')
 
 #LUNA
@@ -139,3 +142,4 @@ Rotulo("!GAME OVER¡", 80, 128, relleno='violetaRojoMedio', tamaño=20)
 Linea(60, 305, 80, 330, relleno='rojo', anchuraDeLinea=20)
 Circulo(52, 295, 15, relleno='caqui')
 
+cmu_graphics.run()

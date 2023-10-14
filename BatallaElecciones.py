@@ -1,3 +1,6 @@
+from cmu_graphics import *
+from cmu_graphics import cmu_graphics
+
 app.fondo = gradiente('índigo', 'azulPizarraOscuro', 'azulMedianoche', inicio='inferior')
 
 #LUNA
@@ -136,3 +139,5 @@ Rect(240, 240, 20, 40, relleno='rojo')
 Circulo(250, 225, 15, relleno='caqui')
 Linea(235, 213, 261, 213, anchuraDeLinea=20, guion=True, relleno='oro')
 Rect(235, 213, 30, 13, relleno='oro')
+
+cmu_graphics.run()
